@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs to Be Done (JTBD) Complete Training Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .toc h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .toc-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .toc-item a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .module {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 2rem;
+        }
+        
+        .module:last-child {
+            border-bottom: none;
+        }
+        
+        .module-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .module-number {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .module-title {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+        
+        .module-objective {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+        }
+        
+        .concept-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border-left: 4px solid #27ae60;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border-left: 4px solid #f39c12;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .activity-title {
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 0.5rem;
+        }
+        
+        .key-points {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .key-points h4 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .formula {
+            background: #f1f3f4;
+            border: 2px solid #dadce0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background: #219a52;
+        }
+        
+        @media print {
+            .print-btn { display: none; }
+            body { background: white; }
+            .container { box-shadow: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .content { padding: 1rem; }
+            .print-btn { position: static; margin: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">📄 Print/Save as PDF</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Jobs to Be Done (JTBD)</h1>
+            <p>Complete Training Deck - 21 Comprehensive Modules</p>
+        </div>
+        
+        <div class="toc">
+            <h2>📚 Table of Contents</h2>
+            <div class="toc-grid">
+                <div class="toc-item"><a href="#module-1">Module 1: Understanding JTBD Fundamentals</a></div>
+                <div class="toc-item"><a href="#module-2">Module 2: Core Elements of JTBD</a></div>
+                <div class="toc-item"><a href="#module-3">Module 3: Jobs & Switch Interviews</a></div>
+                <div class="toc-item"><a href="#module-4">Module 4: Four Forces Analysis</a></div>
+                <div class="toc-item"><a href="#module-5">Module 5: Mapping the Main Job</a></div>
+                <div class="toc-item"><a href="#module-6">Module 6: Underserved Needs</a></div>
+                <div class="toc-item"><a href="#module-7">Module 7: Goal-Based Personas</a></div>
+                <div class="toc-item"><a href="#module-8">Module 8: Competitive Analysis</a></div>
+                <div class="toc-item"><a href="#module-9">Module 9: Jobs-Based Value Proposition</a></div>
+                <div class="toc-item"><a href="#module-10">Module 10: Development Roadmaps</a></div>
+                <div class="toc-item"><a href="#module-11">Module 11: Job Stories</a></div>
+                <div class="toc-item"><a href="#module-12">Module 12: Solution Architecture</a></div>
+                <div class="toc-item"><a href="#module-13">Module 13: Testing Hypotheses</a></div>
+                <div class="toc-item"><a href="#module-14">Module 14: Consumption Journey Mapping</a></div>
+                <div class="toc-item"><a href="#module-15">Module 15: Customer Onboarding</a></div>
+                <div class="toc-item"><a href="#module-16">Module 16: Customer Retention</a></div>
+                <div class="toc-item"><a href="#module-17">Module 17: Customer Support</a></div>
+                <div class="toc-item"><a href="#module-18">Module 18: Surviving Disruption</a></div>
+                <div class="toc-item"><a href="#module-19">Module 19: Jobs-Based Strategy</a></div>
+                <div class="toc-item"><a href="#module-20">Module 20: Organising Around Jobs</a></div>
+                <div class="toc-item"><a href="#module-21">Module 21: Expanding Market Opportunities</a></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Module 1 -->
+            <div class="module" id="module-1">
+                <div class="module-header">
+                    <div class="module-number">Module 1</div>
+                    <h2 class="module-title">Understanding JTBD Fundamentals</h2>
+                    <p class="module-objective">To comprehend the core tenets, history, and unifying principles of Jobs to Be Done (JTBD) theory.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 What is Jobs to Be Done?</h3>
+                    <div class="concept-box">
+                        <p>JTBD is a framework that focuses on understanding <strong>why</strong> customers "hire" products or services to get specific jobs done in their lives. Instead of focusing on your company, product features, or demographics, JTBD centers on the customer's objectives and progress they're trying to make.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🔑 Core Principles</h3>
+                    
+                    <div class="key-points">
+                        <h4>1. Focus on People's Objectives, Not Your Company</h4>
+                        <ul>
+                            <li><strong>Traditional approach:</strong> "How can we sell more of our product?"</li>
+                            <li><strong>JTBD approach:</strong> "What is the customer trying to accomplish?"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: Netflix</div>
+                        <p>Netflix didn't just think about streaming video; they focused on the job "help me relax and be entertained at home." This led them to invest in original content, personalized recommendations, and binge-watching features.</p>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>2. Jobs are Stable Over Time</h4>
+                        <ul>
+                            <li>Technology changes, but human needs remain constant</li>
+                            <li>People have always wanted to "communicate with distant friends" - the solution evolved from letters to phones to social media</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>3. People Seek Services That Make Jobs Quicker and Easier</h4>
+                        <ul>
+                            <li>Customers hire solutions that reduce time, effort, and friction</li>
+                            <li>They fire solutions that create more work or complexity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>4. Making Jobs the Unit of Analysis Makes Innovation Predictable</h4>
+                        <ul>
+                            <li>When you understand the job, you can predict what customers will value</li>
+                            <li>You can innovate systematically rather than randomly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🚀 Benefits of JTBD</h3>
+                    <div class="concept-box">
+                        <ul>
+                            <li><strong>Reduces innovation risk:</strong> Build what customers actually need</li>
+                            <li><strong>Common language:</strong> Aligns teams around customer value</li>
+                            <li><strong>Outside-in perspective:</strong> Shifts focus from internal capabilities to customer needs</li>
+                            <li><strong>Product-market fit:</strong> Ensures solutions match real jobs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Reframe Your Product:</strong> Take your current main product/service. Write down:</p>
+                    <ol>
+                        <li>What job is your customer trying to get done? (Not what your product does, but what the customer wants to accomplish)</li>
+                        <li>How has this job been solved historically?</li>
+                        <li>What makes this job difficult today?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 2 -->
+            <div class="module" id="module-2">
+                <div class="module-header">
+                    <div class="module-number">Module 2</div>
+                    <h2 class="module-title">Core Elements of JTBD</h2>
+                    <p class="module-objective">To identify and define the five core elements of the JTBD framework for precise analysis.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 The Five Core Elements</h3>
+                    
+                    <div class="concept-box">
+                        <h4>1. Job Performer (WHO)</h4>
+                        <p>The individual executing the main job - the ultimate end-user (distinct from the buyer).</p>
+                        <p><strong>Other ecosystem roles:</strong> Approver, Reviewer, Technician, Manager, Audience, Assistant</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: Business Software</div>
+                        <ul>
+                            <li><strong>Job Performer:</strong> Sales rep entering customer data</li>
+                            <li><strong>Buyer:</strong> IT Director who purchases the software</li>
+                            <li><strong>Approver:</strong> CFO who approves the budget</li>
+                            <li><strong>Manager:</strong> Sales Manager who monitors usage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>2. Jobs (WHAT)</h4>
+                        <p>The aim of the performer - what they want to accomplish, independent of any solution.</p>
+                        <ul>
+                            <li><strong>Main Job:</strong> Primary objective</li>
+                            <li><strong>Related Jobs:</strong> Connected activities</li>
+                            <li><strong>Emotional Jobs:</strong> How they want to feel</li>
+                            <li><strong>Social Jobs:</strong> How they want to be perceived</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="formula">
+                        Job Statement Format: VERB + OBJECT + CLARIFIER
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Job Statement Examples</div>
+                        <ul>
+                            <li>"Visit family on special occasions"</li>
+                            <li>"Prepare healthy meals for weeknight dinners"</li>
+                            <li>"Track project progress across multiple teams"</li>
+                            <li>"Learn new skills to advance my career"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>3. Process (HOW)</h4>
+                        <p>The procedure or sequence of stages the job performer goes through to accomplish the objective.</p>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>4. Needs (WHY)</h4>
+                        <p>The performer's requirements or intended outcomes during the job process.</p>
+                    </div>
+                    
+                    <div class="formula">
+                        Needs Statement Format: DIRECTION + MEASURE + OBJECT + CLARIFIER
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Needs Statement Examples</div>
+                        <ul>
+                            <li>"Minimize the time it takes to find parking near the destination"</li>
+                            <li>"Increase the accuracy of expense report calculations"</li>
+                            <li>"Reduce the effort required to share files with team members"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>5. Circumstances (WHEN/WHERE)</h4>
+                        <p>Contextual factors that frame job execution: time, manner, place, and situation.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Circumstances Examples</div>
+                        <ul>
+                            <li><strong>Time:</strong> "During rush hour commute"</li>
+                            <li><strong>Place:</strong> "While traveling for business"</li>
+                            <li><strong>Situation:</strong> "When working with a tight deadline"</li>
+                            <li><strong>Manner:</strong> "While multitasking other responsibilities"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📊 Job Hierarchy</h3>
+                    <div class="concept-box">
+                        <p>Jobs can be viewed at different levels of abstraction:</p>
+                        <ul>
+                            <li><strong>Aspirations:</strong> Highest level life goals</li>
+                            <li><strong>Big Jobs:</strong> Major objectives</li>
+                            <li><strong>Little Jobs:</strong> Specific tasks within big jobs</li>
+                            <li><strong>Micro-Jobs:</strong> Smallest actionable steps</li>
+                        </ul>
+                        <p><strong>Navigation:</strong> Ask "Why?" to move up, "How?" to move down</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Job Hierarchy Example</div>
+                        <ul>
+                            <li><strong>Aspiration:</strong> "Be a successful professional"</li>
+                            <li><strong>Big Job:</strong> "Stay informed about industry trends"</li>
+                            <li><strong>Little Job:</strong> "Read relevant articles during commute"</li>
+                            <li><strong>Micro-Job:</strong> "Save article to read later"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Define the Five Elements:</strong> Select a common customer problem your team faces. Work together to define:</p>
+                    <ol>
+                        <li><strong>Job Performer:</strong> Who is doing the main job?</li>
+                        <li><strong>Job:</strong> What are they trying to accomplish? (Write as verb + object + clarifier)</li>
+                        <li><strong>Process:</strong> What steps do they go through?</li>
+                        <li><strong>Needs:</strong> What outcomes do they want? (Write 3-5 needs statements)</li>
+                        <li><strong>Circumstances:</strong> When/where does this job happen?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 3 -->
+            <div class="module" id="module-3">
+                <div class="module-header">
+                    <div class="module-number">Module 3</div>
+                    <h2 class="module-title">Discovering Value: Jobs & Switch Interviews</h2>
+                    <p class="module-objective">To learn and apply qualitative interviewing techniques to uncover customer goals and motivations.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 Jobs Interviews</h3>
+                    <div class="concept-box">
+                        <p><strong>Purpose:</strong> Open-ended interviews with job performers to understand their objectives and needs, independent of products.</p>
+                        <p><strong>Key Focus Areas:</strong></p>
+                        <ul>
+                            <li>Background and context</li>
+                            <li>Main and related jobs</li>
+                            <li>Current process and workflow</li>
+                            <li>Needs and desired outcomes</li>
+                            <li>Circumstances and constraints</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Critical Incident Technique</h4>
+                        <p>Ask about specific, recent experiences rather than general opinions:</p>
+                        <ul>
+                            <li><strong>Instead of:</strong> "How do you usually prepare for meetings?"</li>
+                            <li><strong>Ask:</strong> "Tell me about the last important meeting you prepared for. Walk me through exactly what you did."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Jobs Interview Questions</div>
+                        <ul>
+                            <li>"Walk me through the last time you had to [do the job]"</li>
+                            <li>"What were you trying to accomplish?"</li>
+                            <li>"What made this situation different or challenging?"</li>
+                            <li>"What did you do before and after?"</li>
+                            <li>"What would have made this easier?"</li>
+                            <li>"How did you know you were successful?"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🔄 Switch Interviews</h3>
+                    <div class="concept-box">
+                        <p><strong>Purpose:</strong> Reverse-engineer why people switch from one solution to another by recreating their purchase journey.</p>
+                        <p><strong>Timeline Stages:</strong></p>
+                        <ol>
+                            <li><strong>First Thought:</strong> What triggered consideration of change?</li>
+                            <li><strong>Passively Looking:</strong> Casual exploration of alternatives</li>
+                            <li><strong>Actively Looking:</strong> Serious comparison of options</li>
+                            <li><strong>Deciding:</strong> Final selection process</li>
+                            <li><strong>Consuming:</strong> First use experience</li>
+                            <li><strong>Satisfaction:</strong> Ongoing value realization</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Switch Interview Example: Software Purchase</div>
+                        <p><strong>First Thought:</strong> "Our spreadsheet crashed and we lost hours of work"</p>
+                        <p><strong>Passively Looking:</strong> "I asked colleagues what they use"</p>
+                        <p><strong>Actively Looking:</strong> "I demo'd three different tools"</p>
+                        <p><strong>Deciding:</strong> "The free trial convinced me it was worth the cost"</p>
+                        <p><strong>Consuming:</strong> "Setup was easier than expected"</p>
+                        <p><strong>Satisfaction:</strong> "We haven't lost data since, and reports are faster"</p>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Switch Interview Questions</h4>
+                        <ul>
+                            <li>"Tell me about the first time you thought about switching..."</li>
+                            <li>"What happened that made you start looking?"</li>
+                            <li>"How did you go about evaluating options?"</li>
+                            <li>"What almost stopped you from switching?"</li>
+                            <li>"What convinced you to make the final decision?"</li>
+                            <li>"How did the first experience compare to expectations?"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📋 Interview Best Practices</h3>
+                    <div class="concept-box">
+                        <ul>
+                            <li><strong>Listen more than you talk:</strong> 80/20 rule</li>
+                            <li><strong>Ask "why" and "help me understand"</strong> to dig deeper</li>
+                            <li><strong>Focus on behavior, not opinions:</strong> What they did, not what they think</li>
+                            <li><strong>Stay solution-agnostic:</strong> Don't mention your product</li>
+                            <li><strong>Record for later analysis:</strong> You can't capture everything in notes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Practice Interview:</strong> Pair up and conduct a 15-minute mock interview:</p>
+                    <ol>
+                        <li>Choose a common job (e.g., "plan a vacation," "find a new apartment")</li>
+                        <li>Interviewer: Use Jobs Interview techniques to understand the process</li>
+                        <li>Switch roles and try a Switch Interview about a recent purchase</li>
+                        <li>Debrief: What insights surprised you?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 4 -->
+            <div class="module" id="module-4">
+                <div class="module-header">
+                    <div class="module-number">Module 4</div>
+                    <h2 class="module-title">Analysing Progress with Four Forces</h2>
+                    <p class="module-objective">To analyse interview insights using the Four Forces model to understand drivers and blockers of customer behaviour change.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>⚖️ The Four Forces Model</h3>
+                    <div class="concept-box">
+                        <p>Four forces influence every customer's decision to switch from their current solution to a new one. A switch occurs when the forces for change (Push + Pull) outweigh the forces against change (Anxiety + Habit).</p>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Force</th>
+                                    <th>Direction</th>
+                                    <th>Description</th>
+                                    <th>Examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Push</strong></td>
+                                    <td>Away from current</td>
+                                    <td>Problems with current solution or external pressures</td>
+                                    <td>System crashes, high costs, new regulations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pull</strong></td>
+                                    <td>Toward new solution</td>
+                                    <td>Attraction of new benefits or aspirations</td>
+                                    <td>Better features, cost savings, status</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anxiety</strong></td>
+                                    <td>Against change</td>
+                                    <td>Concerns about risks of switching</td>
+                                    <td>Learning curve, integration issues, cost</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Habit</strong></td>
+                                    <td>Against change</td>
+                                    <td>Comfort with current routines and familiarity</td>
+                                    <td>Muscle memory, established workflows</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 Detailed Force Descriptions</h3>
+                    
+                    <div class="key-points">
+                        <h4>Push Forces</h4>
+                        <ul>
+                            <li><strong>Functional problems:</strong> Current solution doesn't work properly</li>
+                            <li><strong>Economic pressure:</strong> Cost becomes unsustainable</li>
+                            <li><strong>External changes:</strong> New regulations, market shifts</li>
+                            <li><strong>Growth constraints:</strong> Current solution can't scale</li>
+                            <li><strong>Frustration:</strong> Accumulated annoyances reach tipping point</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Pull Forces</h4>
+                        <ul>
+                            <li><strong>Better performance:</strong> New solution works faster/better</li>
+                            <li><strong>Economic benefit:</strong> Cost savings or ROI improvement</li>
+                            <li><strong>Status/Image:</strong> New solution enhances reputation</li>
+                            <li><strong>New capabilities:</strong> Features that enable new possibilities</li>
+                            <li><strong>Aspirational:</strong> Helps achieve bigger goals</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Anxiety Forces</h4>
+                        <ul>
+                            <li><strong>Learning curve:</strong> Time and effort to master new solution</li>
+                            <li><strong>Integration risk:</strong> Will it work with existing systems?</li>
+                            <li><strong>Financial risk:</strong> What if it doesn't deliver promised value?</li>
+                            <li><strong>Social risk:</strong> What will others think of this choice?</li>
+                            <li><strong>Opportunity cost:</strong> Time spent switching vs. other priorities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Habit Forces</h4>
+                        <ul>
+                            <li><strong>Muscle memory:</strong> Physical comfort with current tools</li>
+                            <li><strong>Mental models:</strong> Established ways of thinking</li>
+                            <li><strong>Workflow integration:</strong> Current solution fits existing process</li>
+                            <li><strong>Investment protection:</strong> Already paid for current solution</li>
+                            <li><strong>Inertia:</strong> "If it ain't broke, don't fix it"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📊 Using Four Forces Analysis</h3>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: Switching to Project Management Software</div>
+                        <p><strong>Push:</strong> Email threads getting confusing, missing deadlines, hard to track progress</p>
+                        <p><strong>Pull:</strong> See organized dashboards, real-time updates, better team collaboration</p>
+                        <p><strong>Anxiety:</strong> Team might resist learning new tool, cost of subscription, integration with existing tools</p>
+                        <p><strong>Habit:</strong> Everyone knows how to use email, established meeting rhythms, current process "works"</p>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>Strategic Implications</h4>
+                        <ul>
+                            <li><strong>Strengthen Push:</strong> Help customers recognize problems with status quo</li>
+                            <li><strong>Amplify Pull:</strong> Clearly communicate benefits and outcomes</li>
+                            <li><strong>Reduce Anxiety:</strong> Provide guarantees, trials, support, testimonials</li>
+                            <li><strong>Lower Habit barriers:</strong> Make switching easy, provide migration tools</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Four Forces Analysis:</strong> Take insights from a customer interview (real or hypothetical) and categorize them:</p>
+                    <ol>
+                        <li>Create four quadrants: Push, Pull, Anxiety, Habit</li>
+                        <li>Place customer quotes/insights in appropriate quadrants</li>
+                        <li>Identify which forces are strongest</li>
+                        <li>Brainstorm how your product could address each force</li>
+                        <li>Discuss: What would tip the balance toward switching?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 5 -->
+            <div class="module" id="module-5">
+                <div class="module-header">
+                    <div class="module-number">Module 5</div>
+                    <h2 class="module-title">Mapping the Main Job</h2>
+                    <p class="module-objective">To create a chronological job map that visualizes the flow of the main job, identifying opportunities for innovation.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🗺️ What is a Job Map?</h3>
+                    <div class="concept-box">
+                        <p>A job map is a chronological representation of the main job's stages, showing the underlying patterns of what the customer is trying to accomplish - independent of any specific solution or brand.</p>
+                        <p><strong>Key Distinction:</strong> This is NOT a customer journey map (which shows interaction with your brand), but a job map (which shows the customer's process regardless of solutions used).</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📋 Universal Job Map Structure</h3>
+                    <div class="concept-box">
+                        <p>Most jobs follow a similar pattern with eight standard phases:</p>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Description</th>
+                                    <th>Example Questions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Define</strong></td>
+                                    <td>Determine what needs to be done and success criteria</td>
+                                    <td>What outcome do I want? What constraints exist?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Locate</strong></td>
+                                    <td>Find resources, information, or tools needed</td>
+                                    <td>Where can I find what I need? Who can help?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Prepare</strong></td>
+                                    <td>Gather materials and set up for execution</td>
+                                    <td>What do I need to get ready? How should I organize?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Confirm</strong></td>
+                                    <td>Verify readiness and validate approach</td>
+                                    <td>Am I ready to proceed? Is this the right approach?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Execute</strong></td>
+                                    <td>Perform the core activity</td>
+                                    <td>How do I complete the main task efficiently?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monitor</strong></td>
+                                    <td>Track progress and ensure quality</td>
+                                    <td>How am I doing? Is it working as expected?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Modify</strong></td>
+                                    <td>Make adjustments based on monitoring</td>
+                                    <td>What needs to change? How can I improve?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Conclude</strong></td>
+                                    <td>Finish the job and evaluate success</td>
+                                    <td>Did I achieve my goal? What did I learn?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🍳 Example: "Prepare a Weeknight Dinner" Job Map</h3>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Complete Job Map Example</div>
+                        <ol>
+                            <li><strong>Define:</strong> Determine what kind of meal fits tonight's constraints (time, dietary needs, preferences)</li>
+                            <li><strong>Locate:</strong> Find recipes and check what ingredients are available at home</li>
+                            <li><strong>Prepare:</strong> Gather ingredients, tools, and prep workspace</li>
+                            <li><strong>Confirm:</strong> Verify all ingredients are fresh and recipe is clear</li>
+                            <li><strong>Execute:</strong> Cook the meal following the process</li>
+                            <li><strong>Monitor:</strong> Check cooking progress, taste, and adjust seasoning</li>
+                            <li><strong>Modify:</strong> Make adjustments to cooking time, temperature, or seasoning</li>
+                            <li><strong>Conclude:</strong> Plate the meal, serve to family, clean up</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>✅ Job Map Quality Guidelines</h3>
+                    <div class="key-points">
+                        <h4>Good Job Map Stages Should Be:</h4>
+                        <ul>
+                            <li><strong>Functional:</strong> Focus on what's being accomplished, not emotions</li>
+                            <li><strong>Short:</strong> 2-8 words per stage</li>
+                            <li><strong>Timeless:</strong> Would apply regardless of technology era</li>
+                            <li><strong>Solution-agnostic:</strong> No mention of specific tools or brands</li>
+                            <li><strong>Chronological:</strong> Follow natural sequence of activities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>Avoid These Common Mistakes:</h4>
+                        <ul>
+                            <li>❌ Emotional language: "Feel confident about choice"</li>
+                            <li>❌ Solution references: "Open spreadsheet application"</li>
+                            <li>❌ Adjectives: "Quickly gather materials"</li>
+                            <li>❌ Brand mentions: "Search on Google"</li>
+                            <li>✅ Better: "Locate relevant information"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>💡 Using Job Maps for Innovation</h3>
+                    <div class="concept-box">
+                        <p>Job maps help identify innovation opportunities by revealing:</p>
+                        <ul>
+                            <li><strong>Pain points:</strong> Which stages are most difficult or time-consuming?</li>
+                            <li><strong>Unmet needs:</strong> What outcomes are customers seeking at each stage?</li>
+                            <li><strong>Workflow gaps:</strong> Where do customers struggle between stages?</li>
+                            <li><strong>Integration opportunities:</strong> How can stages be combined or streamlined?</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Create a Job Map:</strong> Choose a familiar main job and map it out:</p>
+                    <ol>
+                        <li>Pick a job relevant to your business (e.g., "hire a new employee," "plan a marketing campaign")</li>
+                        <li>Start with the universal 8-stage structure</li>
+                        <li>Customize each stage for your specific job</li>
+                        <li>Review against quality guidelines</li>
+                        <li>Identify the 2-3 stages that seem most problematic</li>
+                        <li>Brainstorm: How could technology or services make these stages easier?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 6 -->
+            <div class="module" id="module-6">
+                <div class="module-header">
+                    <div class="module-number">Module 6</div>
+                    <h2 class="module-title">Defining Value: Underserved Needs</h2>
+                    <p class="module-objective">To identify and prioritize customer needs that are important but not well-satisfied by existing solutions.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 What are Underserved Needs?</h3>
+                    <div class="concept-box">
+                        <p>Underserved needs are customer outcomes that are:</p>
+                        <ul>
+                            <li><strong>Important</strong> to the customer (they care about this outcome)</li>
+                            <li><strong>Poorly satisfied</strong> by current solutions (there's a gap)</li>
+                        </ul>
+                        <p>These represent the biggest opportunities for innovation and market success.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📊 Outcome-Driven Innovation (ODI)</h3>
+                    <div class="concept-box">
+                        <p>ODI is a quantitative method developed by Tony Ulwick that measures underserved needs by surveying job performers on two dimensions for each desired outcome:</p>
+                        <ul>
+                            <li><strong>Importance:</strong> How important is this outcome? (1-5 scale)</li>
+                            <li><strong>Satisfaction:</strong> How well are current solutions achieving this? (1-5 scale)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="formula">
+                        Opportunity Score = Importance + (Importance - Satisfaction)
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Interpreting Opportunity Scores</h4>
+                        <ul>
+                            <li><strong>15+:</strong> Extremely underserved (high opportunity)</li>
+                            <li><strong>12-15:</strong> Very underserved (good opportunity)</li>
+                            <li><strong>10-12:</strong> Underserved (some opportunity)</li>
+                            <li><strong>Below 10:</strong> Served or overserved (low opportunity)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📝 Writing Good Needs Statements</h3>
+                    <div class="concept-box">
+                        <p>Needs statements should be specific, measurable, and solution-agnostic:</p>
+                    </div>
+                    
+                    <div class="formula">
+                        Direction + Metric + Object + Context
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Good Needs Statement Examples</div>
+                        <ul>
+                            <li>"Minimize the time it takes to gather documents when preparing taxes"</li>
+                            <li>"Increase the accuracy of expense calculations when submitting reports"</li>
+                            <li>"Reduce the effort required to find relevant information during research"</li>
+                            <li>"Maximize the likelihood of identifying errors before publication"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-box">
+                        <h4>Avoid These Common Mistakes:</h4>
+                        <ul>
+                            <li>❌ Solution-specific: "Make the software faster"</li>
+                            <li>❌ Vague: "Improve the user experience"</li>
+                            <li>❌ Emotional: "Feel more confident"</li>
+                            <li>✅ Better: "Reduce the time it takes to complete data entry tasks"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📈 Alternative Prioritization Methods</h3>
+                    
+                    <div class="key-points">
+                        <h4>1. Importance-Satisfaction Matrix</h4>
+                        <p>Plot job steps or needs on a 2x2 matrix:</p>
+                        <ul>
+                            <li><strong>High Importance, Low Satisfaction:</strong> Primary opportunities</li>
+                            <li><strong>High Importance, High Satisfaction:</strong> Table stakes (must maintain)</li>
+                            <li><strong>Low Importance, Low Satisfaction:</strong> Don't invest</li>
+                            <li><strong>Low Importance, High Satisfaction:</strong> Possible over-engineering</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>2. Jobs Scoring Sheet</h4>
+                        <p>Rate each job or need on three factors:</p>
+                        <ul>
+                            <li><strong>Importance:</strong> How critical is this to success?</li>
+                            <li><strong>Frequency:</strong> How often does this occur?</li>
+                            <li><strong>Frustration:</strong> How painful is the current solution?</li>
+                        </ul>
+                        <p>Total score = (Importance × 3) + (Frequency × 2) + (Frustration × 2)</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 From Needs to Features</h3>
+                    <div class="concept-box">
+                        <p>Once you've identified underserved needs, the next step is brainstorming solutions:</p>
+                        <ol>
+                            <li><strong>Generate multiple concepts:</strong> Don't jump to the first idea</li>
+                            <li><strong>Stay solution-agnostic initially:</strong> Explore different approaches</li>
+                            <li><strong>Consider the whole ecosystem:</strong> Product, service, and process solutions</li>
+                            <li><strong>Test assumptions:</strong> Validate that your solution actually addresses the need</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: Addressing "Minimize time to find parking"</div>
+                        <p><strong>Need:</strong> "Minimize the time it takes to find parking near the destination"</p>
+                        <p><strong>Possible Solutions:</strong></p>
+                        <ul>
+                            <li>Real-time parking availability app</li>
+                            <li>Reserved parking booking system</li>
+                            <li>Dynamic pricing to balance demand</li>
+                            <li>Alternative transportation options</li>
+                            <li>Better parking signage and wayfinding</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Identify Underserved Needs:</strong> For a chosen main job:</p>
+                    <ol>
+                        <li>Brainstorm 10-15 desired outcomes/needs customers have</li>
+                        <li>Write them as proper needs statements (direction + metric + object + context)</li>
+                        <li>As a team, rate each need on Importance (1-5) and current Satisfaction (1-5)</li>
+                        <li>Calculate opportunity scores or plot on importance-satisfaction matrix</li>
+                        <li>Identify the top 3 underserved needs</li>
+                        <li>Discuss: What solutions could address these needs?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 7 -->
+            <div class="module" id="module-7">
+                <div class="module-header">
+                    <div class="module-number">Module 7</div>
+                    <h2 class="module-title">Defining Value: Goal-Based Personas</h2>
+                    <p class="module-objective">To create personas based on customer goals and needs, rather than demographics, to inform design and innovation.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>👤 What are Goal-Based Personas?</h3>
+                    <div class="concept-box">
+                        <p>Goal-based personas are archetypal representations of users that focus on:</p>
+                        <ul>
+                            <li><strong>Intended outcomes:</strong> What they're trying to achieve</li>
+                            <li><strong>Frustrations:</strong> What's blocking their progress</li>
+                            <li><strong>Success criteria:</strong> How they define success</li>
+                            <li><strong>Behavioral variables:</strong> Circumstances, attitudes, and background that affect their approach</li>
+                        </ul>
+                        <p><strong>Key Difference:</strong> Traditional personas focus on demographics ("who they are"), while goal-based personas focus on objectives ("what they're trying to accomplish").</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🆚 Traditional vs Goal-Based Personas</h3>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Traditional Persona</th>
+                                    <th>Goal-Based Persona</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sarah, 34, Marketing Manager<br>Lives in suburbs with 2 kids<br>Shops at Target, drives SUV<br>Active on Instagram</td>
+                                    <td>The Efficiency Seeker<br>Wants to complete tasks quickly<br>Frustrated by redundant steps<br>Success = finishing on time<br>Prefers automated solutions</td>
+                                </tr>
+                                <tr>
+                                    <td>Mike, 28, Software Developer<br>Urban apartment, no kids<br>Shops online, uses public transit<br>Reddit user, gamer</td>
+                                    <td>The Detail-Oriented Analyst<br>Wants comprehensive information before deciding<br>Frustrated by missing data<br>Success = making informed choice<br>Prefers tools with customization</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🔍 Behavioral Variables</h3>
+                    <div class="concept-box">
+                        <p>These variables help differentiate how different people approach the same job:</p>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Experience Level</h4>
+                        <ul>
+                            <li><strong>Novice:</strong> Needs guidance, prefers simple options</li>
+                            <li><strong>Intermediate:</strong> Wants efficiency, some customization</li>
+                            <li><strong>Expert:</strong> Demands control, advanced features</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Risk Tolerance</h4>
+                        <ul>
+                            <li><strong>Risk-averse:</strong> Wants proven solutions, lots of validation</li>
+                            <li><strong>Risk-neutral:</strong> Balanced approach to new vs. established</li>
+                            <li><strong>Risk-seeking:</strong> Willing to try new approaches, early adopter</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Time Availability</h4>
+                        <ul>
+                            <li><strong>Time-constrained:</strong> Needs quick, efficient solutions</li>
+                            <li><strong>Time-flexible:</strong> Can invest time for better outcomes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-points">
+                        <h4>Decision-Making Style</h4>
+                        <ul>
+                            <li><strong>Analytical:</strong> Wants detailed information and comparisons</li>
+                            <li><strong>Intuitive:</strong> Relies on gut feel and recommendations</li>
+                            <li><strong>Consensus-driven:</strong> Needs input from others</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>📝 Goal-Based Persona Template</h3>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: Project Management Software</div>
+                        <h4><strong>The Overwhelmed Organizer</strong></h4>
+                        
+                        <p><strong>Main Job:</strong> "Coordinate team projects across multiple initiatives"</p>
+                        
+                        <p><strong>Key Goals:</strong></p>
+                        <ul>
+                            <li>Keep all team members aligned on priorities</li>
+                            <li>Identify potential delays before they become critical</li>
+                            <li>Reduce time spent in status update meetings</li>
+                        </ul>
+                        
+                        <p><strong>Current Frustrations:</strong></p>
+                        <ul>
+                            <li>Information scattered across email, chat, and documents</li>
+                            <li>Difficult to get real-time project status</li>
+                            <li>Team members forget to update progress</li>
+                        </ul>
+                        
+                        <p><strong>Success Looks Like:</strong></p>
+                        <ul>
+                            <li>Can see project status at a glance</li>
+                            <li>Team proactively communicates issues</li>
+                            <li>Fewer emergency "where are we?" meetings</li>
+                        </ul>
+                        
+                        <p><strong>Behavioral Variables:</strong></p>
+                        <ul>
+                            <li><strong>Experience:</strong> Intermediate (managed projects before, not a PM expert)</li>
+                            <li><strong>Time:</strong> Highly constrained (juggling multiple responsibilities)</li>
+                            <li><strong>Decision style:</strong> Consensus-driven (needs team buy-in for tools)</li>
+                            <li><strong>Tech comfort:</strong> Moderate (can learn new tools but prefers intuitive)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>⚡ Proto-Personas</h3>
+                    <div class="concept-box">
+                        <p>Proto-personas are quick, assumption-based personas created in workshops without formal research. They're useful for:</p>
+                        <ul>
+                            <li>Getting teams aligned on target users</li>
+                            <li>Identifying assumptions to test later</li>
+                            <li>Starting design discussions</li>
+                            <li>Planning research priorities</li>
+                        </ul>
+                        <p><strong>Important:</strong> Proto-personas should be validated with real customer research.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 Using Personas in Development</h3>
+                    <div class="concept-box">
+                        <p>Goal-based personas help teams by:</p>
+                        <ul>
+                            <li><strong>Prioritizing features:</strong> Which persona needs this most?</li>
+                            <li><strong>Design decisions:</strong> How would [persona] want to accomplish this?</li>
+                            <li><strong>User story writing:</strong> "As [persona], I want to..."</li>
+                            <li><strong>Testing scenarios:</strong> Role-play different persona approaches</li>
+                            <li><strong>Marketing messaging:</strong> What resonates with each persona?</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="activity-box">
+                    <div class="activity-title">💡 Workshop Activity</div>
+                    <p><strong>Create a Proto-Persona:</strong> Based on your team's knowledge of customers:</p>
+                    <ol>
+                        <li>Choose a key job your product addresses</li>
+                        <li>Identify 2-3 different types of people who do this job</li>
+                        <li>For each type, create a goal-based persona including:
+                            <ul>
+                                <li>Persona name (descriptive, not personal)</li>
+                                <li>Main job they're trying to do</li>
+                                <li>Top 3 goals within that job</li>
+                                <li>Top 3 current frustrations</li>
+                                <li>What success looks like to them</li>
+                                <li>Key behavioral variables</li>
+                            </ul>
+                        </li>
+                        <li>Discuss: How would your product need to be different for each persona?</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Module 8 -->
+            <div class="module" id="module-8">
+                <div class="module-header">
+                    <div class="module-number">Module 8</div>
+                    <h2 class="module-title">Defining Value: Competitive Analysis</h2>
+                    <p class="module-objective">To compare competing solutions from a JTBD perspective, identifying unmet needs and strategic opportunities beyond traditional product categories.</p>
+                </div>
+                
+                <div class="section">
+                    <h3>🔄 JTBD View of Competition</h3>
+                    <div class="concept-box">
+                        <p>Traditional view: Companies compete with similar products in the same category.</p>
+                        <p><strong>JTBD view:</strong> Companies compete with any solution that helps customers get the same job done, regardless of product category.</p>
+                        <p>This solution-agnostic perspective reveals unexpected competitors and opportunities.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🌟 Example: "Get work done while commuting"</div>
+                        <p><strong>Traditional competitors:</strong> Other mobile productivity apps</p>
+                        <p><strong>JTBD competitors:</strong></p>
+                        <ul>
+                            <li>Audiobooks and podcasts (learning/development)</li>
+                            <li>Voice recording apps (capturing ideas)</li>
+                            <li>Phone calls (relationship building)</li>
+                            <li>Music streaming (mental preparation)</li>
+                            <li>Meditation apps (stress management)</li>
+                            <li>Do nothing (rest and mental break)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>🎯 Identifying Job-Based Competitors</h3>
+                    
+                    <div class="key-points">
+                        <h4>Step 1: Define the Job Clearly</h4>
+                        <p>Be specific about the job you're analyzing. Different job definitions will reveal different competitive sets.</p>
+                        <ul>
+                            <li>"Stay entertained during downtime" vs. "Learn new skills during commute"</li>
+                            <li>"Track personal expenses" vs. "Prepare for tax season"</li>
+                        </ul>
+                    </div
